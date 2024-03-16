@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:include="~{vendor/head.html}">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Electronic shop Items</h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form th:action="@{'/updateItem'}" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Name:</label>
+                    <input type="text" class="form-control" name="item_name"
+                           th:value="${tovar.getName()}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <input type="text" class="form-control" name="description"
+                           th:value="${tovar.getDescription()}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Price</label>
+                    <input type="number" class="form-control" name="price" th:value="${
+                    tovar.getPrice()}">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success">UPDATE ITEM</button>
+                </div>
+            </form>
+            <form th:action="@{'/delete'}" method="post">
+                <input type="hidden" th:value="${tovar.getId()}" name="idka">
+                <button type="submit" class="btn btn-danger">DELETE ITEM</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<!--<script type="text/javascript" href="/js/bootstrap.bundle.js" >-->
+</script>
+</html>

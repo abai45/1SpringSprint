@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{students/vendor/head.html}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    </style>
+</head>
+<body>
+<div th:insert="~{students/vendor/navBar.html}"></div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Exam</th>
+                    <th>Mark</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="s : ${students}">
+                    <td th:text="${s.getId()}"
+                        th:style="${s.getMark().equals('A') ? 'background-color: #2ecc71;'
+                        : (s.getMark().equals('B') ? 'background-color: #3498db;'
+                        : (s.getMark().equals('C') ? 'background-color: #f1c40f;'
+                        : (s.getMark().equals('D') ? 'background-color: #e67e22;'
+                        : 'background-color: #e74c3c;' )))}"></td>
+                    <td th:text="${s.getName()}"
+                        th:style="${s.getMark().equals('A') ? 'background-color: #2ecc71;'
+                        : (s.getMark().equals('B') ? 'background-color: #3498db;'
+                        : (s.getMark().equals('C') ? 'background-color: #f1c40f;'
+                        : (s.getMark().equals('D') ? 'background-color: #e67e22;'
+                        : 'background-color: #e74c3c;' )))}"></td>
+                    <td th:text="${s.getSurname()}"
+                        th:style="${s.getMark().equals('A') ? 'background-color: #2ecc71;'
+                        : (s.getMark().equals('B') ? 'background-color: #3498db;'
+                        : (s.getMark().equals('C') ? 'background-color: #f1c40f;'
+                        : (s.getMark().equals('D') ? 'background-color: #e67e22;'
+                        : 'background-color: #e74c3c;' )))}"></td>
+                    <td th:text="${s.getExam()}"
+                        th:style="${s.getMark().equals('A') ? 'background-color: #2ecc71;'
+                        : (s.getMark().equals('B') ? 'background-color: #3498db;'
+                        : (s.getMark().equals('C') ? 'background-color: #f1c40f;'
+                        : (s.getMark().equals('D') ? 'background-color: #e67e22;'
+                        : 'background-color: #e74c3c;' )))}"></td>
+                    <td th:text="${s.getMark()}"
+                        th:style="${s.getMark().equals('A') ? 'background-color: #2ecc71;'
+                        : (s.getMark().equals('B') ? 'background-color: #3498db;'
+                        : (s.getMark().equals('C') ? 'background-color: #f1c40f;'
+                        : (s.getMark().equals('D') ? 'background-color: #e67e22;'
+                        : 'background-color: #e74c3c;' )))}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
